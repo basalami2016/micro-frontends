@@ -25,7 +25,7 @@ npm run dev:serve    # Serves the built files on port 5001
 
 ### Terminal 1: Remote App
 ```bash
-cd /home/basalami/niqflex/micro-fronteds/remote
+cd /home/../micro-fronteds/remote
 
 # Build it first
 npm run build
@@ -38,7 +38,7 @@ Wait for: `➜ Local: http://localhost:5001/`
 
 ### Terminal 2: Host App
 ```bash
-cd /home/basalami/niqflex/micro-fronteds/host
+cd /home/../micro-fronteds/host
 
 npm run dev
 ```
