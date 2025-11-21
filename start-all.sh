@@ -8,7 +8,7 @@ sleep 2
 
 # Start SSCS App (Port 5001)
 echo "Starting SSCS App on port 5001..."
-cd /home/basalami/niqflex/micro-fronteds/sscs-app
+cd /home/../micro-fronteds/sscs-app
 nohup npm run dev:serve > /tmp/sscs-app.log 2>&1 &
 SSCS_PID=$!
 echo "SSCS App PID: $SSCS_PID"
@@ -16,7 +16,7 @@ sleep 4
 
 # Start OSS App (Port 5002)
 echo "Starting OSS App on port 5002..."
-cd /home/basalami/niqflex/micro-fronteds/oss-app
+cd /home/../micro-fronteds/oss-app
 nohup npm run dev:serve > /tmp/oss-app.log 2>&1 &
 OSS_PID=$!
 echo "OSS App PID: $OSS_PID"
@@ -48,7 +48,7 @@ curl -s -o /dev/null -w "OSS remoteEntry (5002): %{http_code}\n" http://localhos
 
 echo ""
 echo "Now run in another terminal:"
-echo "cd /home/basalami/niqflex/micro-fronteds/host && npm run dev"
+echo "cd /home/../micro-fronteds/host && npm run dev"
 echo ""
 echo "To view logs:"
 echo "  tail -f /tmp/sscs-app.log"
