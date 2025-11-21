@@ -1,0 +1,30 @@
+
+# Terminal 1 - Build & serve SSCS
+cd sscs-app
+npm run build
+npm run dev:serve  # Port 5001
+
+# Terminal 2 - Start host
+cd host
+npm run dev  # Port 5000
+
+
+
+Legacy
+# Terminal 1
+cd remote && npm run build && npm run dev:serve
+
+# Terminal 2
+cd oss-app && npm run build && npm run dev:serve
+
+# Terminal 3
+cd host && npm run dev
+
+# Terminal 1 - Remote App
+cd /home/basalami/niqflex/micro-fronteds/remote
+npm run build        # Build first!
+npm run dev:serve    # Then serve on port 5001
+
+# Terminal 2 - Host App  
+cd /home/basalami/niqflex/micro-fronteds/host
+npm run dev          # Run on port 5000

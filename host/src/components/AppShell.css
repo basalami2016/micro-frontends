@@ -1,0 +1,291 @@
+/* AppShell Layout using CSS Grid */
+.app-shell {
+  display: grid;
+  grid-template-columns: 250px 1fr 300px;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas:
+    "header header header"
+    "left-aside main-content right-aside";
+  min-height: 100vh;
+  gap: 0;
+}
+
+/* Header - Using Flexbox */
+.app-header {
+  grid-area: header;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.logo-link {
+  color: white;
+  text-decoration: none;
+}
+
+.header-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+.header-nav a:hover {
+  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.header-nav a.active {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+/* Left Aside */
+.left-aside {
+  grid-area: left-aside;
+  background: #f8f9fa;
+  padding: 2rem 1.5rem;
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+}
+
+.left-aside h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #555;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.sidebar-nav a:hover {
+  background: #e9ecef;
+  color: #667eea;
+  transform: translateX(4px);
+}
+
+.sidebar-nav a.active {
+  background: #667eea;
+  color: white;
+  font-weight: 600;
+}
+
+.sidebar-nav a.active:hover {
+  background: #5568d3;
+  transform: translateX(0);
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+}
+
+/* Main Content */
+.main-content {
+  grid-area: main-content;
+  padding: 2rem;
+  background: #ffffff;
+  overflow-y: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Right Aside */
+.right-aside {
+  grid-area: right-aside;
+  background: #f8f9fa;
+  padding: 2rem 1.5rem;
+  border-left: 1px solid #e0e0e0;
+  overflow-y: auto;
+}
+
+.right-aside h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* Widget Styling - Using Flexbox */
+.widget {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.widget h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Stats - Using Flexbox */
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  color: #667eea;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Notification List */
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-list li {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #555;
+  border-left: 3px solid #667eea;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .app-shell {
+    grid-template-columns: 250px 1fr 250px;
+  }
+}
+
+@media (max-width: 992px) {
+  .app-shell {
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+      "header header"
+      "left-aside main-content";
+  }
+
+  .right-aside {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main-content";
+  }
+
+  .left-aside {
+    display: none;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .app-header {
+    height: auto;
+    position: relative;
+  }
+
+  .header-nav {
+    gap: 1rem;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+}
+
+/* Scrollbar Styling */
+.left-aside::-webkit-scrollbar,
+.right-aside::-webkit-scrollbar,
+.main-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.left-aside::-webkit-scrollbar-track,
+.right-aside::-webkit-scrollbar-track,
+.main-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.left-aside::-webkit-scrollbar-thumb,
+.right-aside::-webkit-scrollbar-thumb,
+.main-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.left-aside::-webkit-scrollbar-thumb:hover,
+.right-aside::-webkit-scrollbar-thumb:hover,
+.main-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

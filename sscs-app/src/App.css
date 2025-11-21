@@ -1,0 +1,638 @@
+/* SSCS App - Software Supply Chain Security Styles */
+
+/* Layout */
+.sscs-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.sscs-nav {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sscs-nav h2 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: #475569;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.sscs-main {
+  flex: 1;
+  overflow: auto;
+  padding: 2rem;
+}
+
+/* Vulnerability Container */
+.vulnerability-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header */
+.vulnerability-header {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vulnerability-header h1 {
+  margin: 0 0 0.5rem 0;
+  color: #1e293b;
+  font-size: 2rem;
+}
+
+.vulnerability-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.scan-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.scan-badge {
+  background: #f1f5f9;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: #475569;
+  font-size: 0.875rem;
+}
+
+.btn-scan {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-scan:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Stats Cards - Grid Layout */
+.vuln-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-left: 4px solid;
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card.critical {
+  border-left-color: #dc2626;
+}
+
+.stat-card.high {
+  border-left-color: #ea580c;
+}
+
+.stat-card.medium {
+  border-left-color: #f59e0b;
+}
+
+.stat-card.low {
+  border-left-color: #3b82f6;
+}
+
+.stat-card.total {
+  border-left-color: #8b5cf6;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card.critical .stat-number {
+  color: #dc2626;
+}
+
+.stat-card.high .stat-number {
+  color: #ea580c;
+}
+
+.stat-card.medium .stat-number {
+  color: #f59e0b;
+}
+
+.stat-card.low .stat-number {
+  color: #3b82f6;
+}
+
+.stat-card.total .stat-number {
+  color: #8b5cf6;
+}
+
+.stat-label {
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Filter Bar - Flexbox Layout */
+.filter-bar {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #475569;
+}
+
+.filter-select {
+  padding: 0.5rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  color: #1e293b;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.filter-select:hover {
+  border-color: #667eea;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.result-count {
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Main Content Grid */
+.vuln-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  gap: 1.5rem;
+  min-height: 600px;
+}
+
+/* Vulnerability List */
+.vuln-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 800px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.vuln-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.vuln-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.vuln-list::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.5);
+  border-radius: 4px;
+}
+
+.vuln-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.7);
+}
+
+/* Vulnerability Card */
+.vuln-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.vuln-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-color: #667eea;
+}
+
+.vuln-card.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+}
+
+.vuln-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.severity-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.severity-badge.large {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.cvss-score {
+  background: #f1f5f9;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.vuln-title {
+  margin: 0 0 1rem 0;
+  color: #1e293b;
+  font-size: 1.125rem;
+}
+
+.vuln-package-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.package-name {
+  font-weight: 600;
+  color: #475569;
+}
+
+.version-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.current-version {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.arrow {
+  color: #94a3b8;
+}
+
+.fixed-version {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.vuln-description {
+  color: #64748b;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Details Panel */
+.vuln-details-panel {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 800px;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+}
+
+.vuln-details-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.vuln-details-panel::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.vuln-details-panel::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.details-header h2 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 1.5rem;
+}
+
+.details-section {
+  margin-bottom: 2rem;
+}
+
+.details-section h3 {
+  color: #475569;
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detail-item label {
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detail-item span {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.cvss-large {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #dc2626 !important;
+}
+
+.version-vulnerable {
+  color: #dc2626 !important;
+  font-weight: 600 !important;
+}
+
+.version-fixed {
+  color: #10b981 !important;
+  font-weight: 600 !important;
+}
+
+.full-description {
+  color: #475569;
+  line-height: 1.8;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.affected-paths {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.affected-paths li {
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid #667eea;
+}
+
+.affected-paths code {
+  color: #475569;
+  font-size: 0.875rem;
+  font-family: 'Courier New', monospace;
+}
+
+.remediation-box {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #10b981;
+}
+
+.remediation-box p {
+  margin: 0 0 1rem 0;
+  color: #065f46;
+  font-weight: 600;
+}
+
+.command-box {
+  display: block;
+  background: #1e293b;
+  color: #10b981;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.remediation-note {
+  color: #065f46;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.btn-secondary:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+/* Placeholder */
+.details-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #94a3b8;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.placeholder-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.details-placeholder h3 {
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.details-placeholder p {
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .vuln-content-grid {
+    grid-template-columns: 1fr 450px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .vuln-content-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vuln-details-panel {
+    position: static;
+    max-height: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .sscs-main {
+    padding: 1rem;
+  }
+  
+  .vulnerability-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .vuln-stats {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}
