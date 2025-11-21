@@ -40,7 +40,7 @@ npm install
 #### Option A: Use the startup script (Easiest)
 
 ```bash
-cd /home/basalami/niqflex/micro-fronteds
+cd /home/../micro-fronteds
 ./start.sh
 ```
 
