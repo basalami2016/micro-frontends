@@ -4,7 +4,7 @@
 
 ### 1. Build the OSS App
 ```bash
-cd /home/basalami/niqflex/micro-fronteds/oss-app
+cd /home/../micro-fronteds/oss-app
 npm run build
 ```
 
