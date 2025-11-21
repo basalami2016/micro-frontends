@@ -14,22 +14,22 @@ You now have **3 micro-frontend applications**:
 
 ```bash
 # Terminal 1 - SSCS App
-cd /home/basalami/niqflex/micro-fronteds/sscs-app
+cd /home/.../micro-fronteds/sscs-app
 npm run dev:serve
 
 # Terminal 2 - OSS App
-cd /home/basalami/niqflex/micro-fronteds/oss-app
+cd /home/../micro-fronteds/oss-app
 npm run dev:serve
 
 # Terminal 3 - Host App
-cd /home/basalami/niqflex/micro-fronteds/host
+cd /home/.../micro-fronteds/host
 npm run dev
 ```
 
 ### Option 2: One-Line Starter (Background)
 
 ```bash
-cd /home/basalami/niqflex/micro-fronteds && \
+cd /home/.../micro-fronteds && \
 (cd sscs-app && npm run dev:serve &) && \
 (cd oss-app && npm run dev:serve &) && \
 (cd host && npm run dev)
@@ -53,15 +53,15 @@ Make sure all apps have dependencies installed:
 
 ```bash
 # Check Host
-cd /home/basalami/niqflex/micro-fronteds/host
+cd /.../micro-fronteds/host
 npm list react react-dom react-router-dom
 
 # Check SSCS App
-cd /home/basalami/niqflex/micro-fronteds/sscs-app
+cd /home/../micro-fronteds/sscs-app
 npm list react react-dom react-router-dom
 
 # Check OSS App
-cd /home/basalami/niqflex/micro-fronteds/oss-app
+cd /home/.../micro-fronteds/oss-app
 npm list react react-dom react-router-dom
 ```
 
@@ -73,18 +73,18 @@ If any errors, run `npm install` in that directory.
 
 ```bash
 # Build SSCS App
-cd /home/basalami/niqflex/micro-fronteds/sscs-app
+cd /home/.../micro-fronteds/sscs-app
 npm run build
 
 # Build OSS App
-cd /home/basalami/niqflex/micro-fronteds/oss-app
+cd /home/.../micro-fronteds/oss-app
 npm run build
 ```
 
 ### Step 3: Start SSCS App
 
 ```bash
-cd /home/basalami/niqflex/micro-fronteds/sscs-app
+cd /home/.../micro-fronteds/sscs-app
 npm run dev:serve
 ```
 
@@ -101,7 +101,7 @@ npm run dev:serve
 Open a **new terminal**:
 
 ```bash
-cd /home/basalami/niqflex/micro-fronteds/oss-app
+cd /home/.../micro-fronteds/oss-app
 npm run dev:serve
 ```
 
@@ -118,7 +118,7 @@ npm run dev:serve
 Open a **new terminal**:
 
 ```bash
-cd /home/basalami/niqflex/micro-fronteds/host
+cd /home/.../micro-fronteds/host
 npm run dev
 ```
 
@@ -273,10 +273,10 @@ npm run dev:serve
 
 ```bash
 # SSCS App
-ls /home/basalami/niqflex/micro-fronteds/sscs-app/dist/assets/remoteEntry.js
+ls /home/.../micro-fronteds/sscs-app/dist/assets/remoteEntry.js
 
 # OSS App
-ls /home/basalami/niqflex/micro-fronteds/oss-app/dist/assets/remoteEntry.js
+ls /home/.../micro-fronteds/oss-app/dist/assets/remoteEntry.js
 ```
 
 Both should exist.
