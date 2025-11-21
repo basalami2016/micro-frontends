@@ -46,7 +46,7 @@ The host will be available at http://localhost:5000
 Use the provided script to do all steps automatically:
 
 ```bash
-cd /home/basalami/niqflex/micro-fronteds
+cd /home/../micro-fronteds
 ./start.sh
 ```
 
